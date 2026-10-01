@@ -1,0 +1,27 @@
+.aContext {
+    width: 800px;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+    margin-top: 20px
+}
+
+.bContext {
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 0 10px red;
+    margin-top: 20px
+}
+
+.cContext {
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 0 10px blue;
+    margin-top: 20px
+}
+
+.dContext {
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 0 10px yellow;
+    margin-top: 20px
+}
