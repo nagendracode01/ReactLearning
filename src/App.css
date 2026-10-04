@@ -16,3 +16,16 @@
 .senior {
   border: 3px solid gold;
 }
+
+.avatar-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: steelblue;
+  color: white;
+  font-size: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
