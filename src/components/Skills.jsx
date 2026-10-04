@@ -1,4 +1,4 @@
-function Skills({skills}) {
+function Skills({skills=[]}) {
   if(skills.length === 0) {
     return "No skills added yet";
   }else{
