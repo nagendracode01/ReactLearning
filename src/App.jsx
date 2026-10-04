@@ -19,7 +19,7 @@ const person1 = {
   yearsOfExp: 11,
   photo: 'https://picsum.photos/id/1005/150',
   skills: ['Java', 'Spring Boot', 'React', 'AWS', 'Microservices'],
-  hobbie: ['doing code','reading books'],
+  hobbie: ['doing code','reading books','cricket'],
   isAvailable: true,
   certifications: 3,
 };
@@ -57,21 +57,21 @@ function App() {
      <Card title="Profile 1"  isSenior={person1.yearsOfExp >= 8}>
   <ProfileCard {...person1} />
   <Skills skills={person1.skills} />
-  <Hobbie hobbie={person1.hobbie}/>
+  <Hobbie hobbie={person1.hobbie} havingHobbie={person1.hobbie.length > 2}/>
   <OpentoWork work = {person1.isAvailable}/>
 </Card>
 
 <Card title="Profile 2"  isSenior={person2.yearsOfExp >= 8}>
   <ProfileCard {...person2} />
   <Skills skills={person2.skills} />
-  <Hobbie hobbie={person2.hobbie}/>
+  <Hobbie hobbie={person2.hobbie} havingHobbie={person2.hobbie.length > 2}/>
   <OpentoWork work = {person2.isAvailable}/>
 </Card>
 
 <Card title="Profile 3"  isSenior={person3.yearsOfExp >= 8}>
   <ProfileCard {...person3} />
   <Skills skills={person3.skills} />
-  <Hobbie hobbie={person3.hobbie}/>
+  <Hobbie hobbie={person3.hobbie} havingHobbie={person3.hobbie.length > 2}/>
   <OpentoWork work = {person3.isAvailable}/>
 </Card>
 

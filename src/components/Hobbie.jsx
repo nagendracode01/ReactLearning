@@ -1,7 +1,7 @@
-function Hobbie({hobbie = []}) {
+function Hobbie({hobbie = [],havingHobbie}) {
   return (
     <ul>
-    { hobbie.length > 0 ? <li>{hobbie.join(' . ')}</li>: null}
+    { hobbie.length > 0 ? <li className={havingHobbie ? 'seniorhobby' : 'juniorhobby'}>{hobbie.join(' . ')}</li>: null}
     </ul>
   );
 }
