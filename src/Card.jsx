@@ -1,6 +1,6 @@
-function Card({ title, children }) {
+function Card({ title, children, isSenior }) {
   return (
-    <div style={{ border: '1px solid black', padding: 20, margin: 10, borderRadius: 10 }}>
+    <div className={isSenior ? 'card senior' : 'card'}>
       <h3>{title}</h3>
       {children}
     </div>
