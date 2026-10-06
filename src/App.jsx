@@ -69,8 +69,8 @@ function App() {
     <div className="profile-card" style={cardTheme}>
       {/* Main profile sections */}
       <Header />
+         <p>{people.length} people · {people.filter(p => p.isAvailable).length} open to work</p>
       <div style={{ display: 'flex', gap: 16 }}>
-       <p>{people.length} people · {people.filter(p => p.isAvailable).length} open to work</p>
       {
   people.map(p => {
     return (
