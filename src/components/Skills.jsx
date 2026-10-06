@@ -4,7 +4,11 @@ function Skills({skills=[]}) {
   }else{
   return (
     <ul>
-      <li>{skills.join(' . ')}</li>
+      {
+      skills.map(skill => (
+         <li key={skill}>{skill}</li>
+        ))
+      }
     </ul>
   );
 }
