@@ -38,7 +38,8 @@ const people = [
   certifications: 0,
 
   },
-  { id: 3, 
+  { 
+    id: 3, 
     name: 'Arjun Rao',
   role: 'Intern',
   city: 'Chennai',
@@ -48,6 +49,17 @@ const people = [
   isAvailable: true,
   certifications: 1,
   },
+  { 
+    id: 4, 
+    name: 'fafa',
+  role: 'Intern',
+  city: 'Chennai',
+  yearsOfExp: 0,
+  skills: ['java'],
+  hobbie: ['cooking','code'],
+  isAvailable: true,
+  certifications: 4,
+  }
 ];
 
 
@@ -58,7 +70,7 @@ function App() {
       {/* Main profile sections */}
       <Header />
       <div style={{ display: 'flex', gap: 16 }}>
-
+       <p>{people.length} people · {people.filter(p => p.isAvailable).length} open to work</p>
       {
   people.map(p => {
     return (
