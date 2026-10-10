@@ -137,7 +137,13 @@ people.map(p => (
 )) */}
 
 
-
+ {/* Proof: original order of the people array */}
+      <h3>Original order</h3>
+      <ol>
+        {people.map(p => (
+          <li key={p.id}>{p.name} – {p.yearsOfExp} yrs</li>
+        ))}
+      </ol>
 
 <Footer name="Nagendra"/>
     </div>
