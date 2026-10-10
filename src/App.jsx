@@ -7,6 +7,7 @@ import Card from './Card';
 import Footer from './components/Footer';
 import Hobbie from './components/Hobbie';
 import OpentoWork from './OpentoWork';
+import TeamStats from './TeamStats';
 
 const cardTheme = {
   border: '3px solid steelblue',
@@ -65,14 +66,16 @@ const people = [
 
 
 function App() {
+  const sortedPeople = [...people].sort((a,b) => b.yearsOfExp - a.yearsOfExp)
   return (
     <div className="profile-card" style={cardTheme}>
       {/* Main profile sections */}
       <Header />
-         <p>{people.length} people · {people.filter(p => p.isAvailable).length} open to work</p>
+         <p>{sortedPeople.length} People · {sortedPeople.filter(p => p.isAvailable).length} open to work</p>
+         <TeamStats people={people} />  
       <div style={{ display: 'flex', gap: 16 }}>
       {
-  people.map(p => {
+  sortedPeople.map(p => {
     return (
       <Card
         key={p.id}
