@@ -1,7 +1,8 @@
 import { Badge } from './Badge';
+import Button from '../Button';
 
 
-export function ProfileCard({ name, role, city, yearsOfExp, photo,certifications }) {
+export function ProfileCard({ name, role, city, yearsOfExp, photo,certifications, OnContact }) {
   return (
     <>
       {photo ? (
@@ -10,6 +11,7 @@ export function ProfileCard({ name, role, city, yearsOfExp, photo,certifications
          <div className="avatar-circle">{name[0]}</div>
       )}
       <h2>{name}</h2>
+      <Button label="Contact" onClick={OnContact}/> 
       <p>{role}</p>
       <p>{city}</p>
      <p>{yearsOfExp} years · {yearsOfExp >= 8 ? 'Senior' : 'Junior'}</p>

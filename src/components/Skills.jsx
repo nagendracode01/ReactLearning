@@ -1,4 +1,5 @@
-function Skills({skills=[]}) {
+import Button from "../Button";
+function Skills({skills=[],OnSkills}) {
 //   if(skills.length === 0) {
 //     return "No skills added yet";
 //   }else{
@@ -15,17 +16,24 @@ function Skills({skills=[]}) {
 //   );
 // }
 // }
+ const sorted = [...skills].sort();
+return(
+  <div>
+    <br/>
+<Button label="skills" onClick={OnSkills}/> 
 
-  const sorted = [...skills].sort();
-  return sorted.length > 0 ? (
-         <ul>
-      {
-      sorted.map(skill => (
-         <li key={skill}>{skill}</li>
-        ))
-      }
-    </ul>
-  ) : "No skills added yet" 
+    {sorted.length > 0 ? (
+        <ul>
+          {sorted.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No skills added yet</p>
+      )}
+  </div>
+);
+
 
 }
 

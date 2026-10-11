@@ -67,6 +67,12 @@ const people = [
 
 function App() {
   const sortedPeople = [...people].sort((a,b) => b.yearsOfExp - a.yearsOfExp)
+  function handleContact(person) {
+    alert(`Contacting ${person.name} in ${person.city}`);
+  }
+  function ShowSkills(skills){
+       alert(`showing skills: ${skills}`);
+  }
   return (
     <div className="profile-card" style={cardTheme}>
       {/* Main profile sections */}
@@ -83,8 +89,8 @@ function App() {
         id={p.id}
         isSenior={p.yearsOfExp >= 8}
       >
-        <ProfileCard {...p} />
-        <Skills skills={p.skills} />
+        <ProfileCard {...p} OnContact={() => handleContact(p)}  />
+        <Skills skills={p.skills} OnSkills={() => ShowSkills(p.skills)} />
         <Hobbie
           hobbie={p.hobbie}
           havingHobbie={p.hobbie.length > 2}
@@ -95,7 +101,10 @@ function App() {
   })
 }
 
+
+
 </div>
+
 
 {/* <div>
 {
