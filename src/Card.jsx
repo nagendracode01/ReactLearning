@@ -1,6 +1,10 @@
-function Card({ title, children, isSenior }) {
+function Card({ title, children, isSenior, onClick, onMouseEnter }) {
   return (
-    <div className={isSenior ? 'card senior' : 'card'}>
+    <div
+      className={isSenior ? 'card senior' : 'card'}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+    >
       <h3>{title}</h3>
       {children}
     </div>

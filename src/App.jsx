@@ -88,6 +88,8 @@ function App() {
         title="Profile"
         id={p.id}
         isSenior={p.yearsOfExp >= 8}
+        onClick={() => console.log(`Card clicked: ${p.name}`)}
+  onMouseEnter={() => console.log(`Viewing ${p.name}`)}
       >
         <ProfileCard {...p} OnContact={() => handleContact(p)}  />
         <Skills skills={p.skills} OnSkills={() => ShowSkills(p.skills)} />
