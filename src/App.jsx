@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Hobbie from './components/Hobbie';
 import OpentoWork from './OpentoWork';
 import TeamStats from './TeamStats';
+import { useState } from 'react';
 
 const cardTheme = {
   border: '3px solid steelblue',
@@ -67,6 +68,11 @@ const people = [
 
 function App() {
   const sortedPeople = [...people].sort((a,b) => b.yearsOfExp - a.yearsOfExp)
+   const [query, setQuery] = useState('');
+    // Calculated from state on every render (not stored in state)
+  const visiblePeople = sortedPeople.filter(p =>
+    p.name.toLowerCase().includes(query.toLowerCase())
+  );
   function handleContact(person) {
     alert(`Contacting ${person.name} in ${person.city}`);
   }
@@ -79,9 +85,17 @@ function App() {
       <Header />
          <p>{sortedPeople.length} People · {sortedPeople.filter(p => p.isAvailable).length} open to work</p>
          <TeamStats people={people} />  
+          {/* Search box */}
+      <input
+        placeholder="Search by name"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+      />
+      <p>Showing {visiblePeople.length} of {people.length} people</p>
+
       <div style={{ display: 'flex', gap: 16 }}>
       {
-  sortedPeople.map(p => {
+  visiblePeople.map(p => {
     return (
       <Card
         key={p.id}

@@ -1,5 +1,7 @@
 import Button from "../Button";
-function Skills({skills=[],OnSkills}) {
+import { useState } from "react";
+function Skills({skills=[]}) {
+  const [isOpen, setIsOpen] = useState(false);
 //   if(skills.length === 0) {
 //     return "No skills added yet";
 //   }else{
@@ -20,9 +22,11 @@ function Skills({skills=[],OnSkills}) {
 return(
   <div>
     <br/>
-<Button label="skills" onClick={OnSkills}/> 
+{/* <Button label="skills" onClick={OnSkills}/>  */}
+<Button label={isOpen ? 'Hide Skills' : 'Show Skills'} onClick={() => setIsOpen(!isOpen)}/>
 
-    {sorted.length > 0 ? (
+    {isOpen && (
+    sorted.length > 0 ? (
         <ul>
           {sorted.map((skill) => (
             <li key={skill}>{skill}</li>
@@ -30,7 +34,8 @@ return(
         </ul>
       ) : (
         <p>No skills added yet</p>
-      )}
+      )
+    )}
   </div>
 );
 
